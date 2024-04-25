@@ -8,7 +8,9 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features = "src/test/java/features", 
 		glue = "stepDefs",
-		tags = "@FirstTestCase"
+		tags = "@ScenarioOutlineExample",
+		//plugin = "html:target/cucumber-reports/index.html"
+		plugin = "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 		)
 
 public class UITestRunner {

@@ -32,6 +32,13 @@ public class loginSteps {
 		driver.findElement(By.cssSelector("input#user-name")).sendKeys(credentials.get(0).get("Username"));
 		driver.findElement(By.cssSelector("input#password")).sendKeys(credentials.get(0).get("password"));
 	}
+	
+	@When("User entered {string} and {string}")
+	public void enterCredentials(String username, String password) {
+		driver.findElement(By.cssSelector("input#user-name")).sendKeys(username);
+		driver.findElement(By.cssSelector("input#password")).sendKeys(password);
+	}
+
 
 	@When("User has clicked on the login button")
 	public void clickLoginBtn() {
