@@ -1,7 +1,6 @@
 @UI
 Feature: As a user of the application I want to validate login functionality
 
-  @FirstTestCase
   Scenario: Validate login functionality with valid username and password
     Given User has launched the url "https://www.saucedemo.com/"
     When User entered following credentials
