@@ -14,11 +14,11 @@ public class hooks {
 	
 	public WebDriver driver;
 	
-	@Before(value = "@Chrome")
+	@Before
 	public void chromeSetUp(Scenario scenario) {
 		System.out.println("I am in before scenario");
 		//Singleton design
-		CreateDriver.getInstance().setDriver("firefox");
+		CreateDriver.getInstance().setDriver("chrome");
 		driver = CreateDriver.getInstance().getDriver();
 		
 		driver.get("https://www.saucedemo.com/");
@@ -34,7 +34,7 @@ public class hooks {
 	}
 	
 	@After
-	public void tearDown(Scenario scenario) {
+	public void tearDown() {
 		System.out.println("I am in after scenario");
 		driver.quit();
 	}

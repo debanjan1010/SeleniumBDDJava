@@ -15,6 +15,56 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.2.5</version>
+				<!--				<configuration>
+					<threadCount>2</threadCount>
+					<parallel>methods</parallel>
+					<includes>**/runner/*Runner.java</includes>
+				</configuration>-->
+
+				<configuration>
+					<!--                        <includes>**/runner/*Runner.java</includes>-->
+					<!--                        <parallel>methods</parallel>-->
+					<!--                        <threadCount>2</threadCount>-->
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+					<!--                        <properties>-->
+					<!--                            <property>-->
+					<!--                                <name>listener</name>-->
+					<!--                                <value>failedTestCases.AnnotationTransformer</value>-->
+					<!--                            </property>-->
+					<!--                        </properties>-->
+
+					<!--                        <properties>&ndash;&gt;-->
+					<!--                            <property>-->
+					<!--                                <name>dataproviderthreadcount</name>-->
+					<!--                                <value>2</value>-->
+					<!--                            </property>-->
+					<!--                        </properties>-->
+				</configuration>
+
+			</plugin>
+		</plugins>
+	</build>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -51,6 +101,29 @@
 			<groupId>tech.grasshopper</groupId>
 			<artifactId>extentreports-cucumber7-adapter</artifactId>
 			<version>1.14.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.10.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>7.17.0</version>
 		</dependency>
 
 

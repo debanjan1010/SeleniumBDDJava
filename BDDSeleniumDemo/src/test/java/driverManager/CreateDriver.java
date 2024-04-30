@@ -4,14 +4,14 @@ import org.openqa.selenium.WebDriver;
 
 public class CreateDriver {
 	
-	private WebDriver driver;
+	private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	private static CreateDriver INSTANCE;
 	
 	private CreateDriver() {
 		
 	}
 	
-	public static CreateDriver getInstance() {
+	public static synchronized CreateDriver getInstance() {
 		if(INSTANCE == null) {
 			INSTANCE = new CreateDriver();
 		}
@@ -33,11 +33,11 @@ public class CreateDriver {
 //			break;
 //		}
 //		
-		driver = DriverManager.getBrowserManager(browser).getDriver();
+		driver.set(DriverManager.getBrowserManager(browser).getDriver());
 	}
 	
 	public WebDriver getDriver() {
-		return driver;
+		return driver.get();
 	}
 	
 

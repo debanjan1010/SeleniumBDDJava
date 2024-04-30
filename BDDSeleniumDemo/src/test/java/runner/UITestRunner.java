@@ -6,9 +6,9 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/java/features", 
+		features = "src/test/java/featuresToBeRunInParallel", 
 		glue = {"stepDefs", "hooks"},
-		tags = "@PageObjectModel and @Chrome",
+		tags = "@Google and @Chrome",
 		//plugin = "html:target/cucumber-reports/index.html"
 		plugin = "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 		)

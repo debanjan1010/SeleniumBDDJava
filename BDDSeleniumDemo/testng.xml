@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="All Test Suite" data-provider-thread-count="2">
+    <test name="CucumberRunner">
+        <classes>
+            <class name="runner.UITestRunnerTestNG"/>
+        </classes>
+    </test>
+    <!--    <listeners>-->
+    <!--        <listener class-name="failedTestCases.AnnotationTransformer"></listener>-->
+    <!--    </listeners>-->
+</suite>
